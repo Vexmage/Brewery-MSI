@@ -1,0 +1,12 @@
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\bin\Debug\net6.0\Brewery-MSI.Models.deps.json
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\bin\Debug\net6.0\Brewery-MSI.Models.dll
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\bin\Debug\net6.0\Brewery-MSI.Models.pdb
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\Brewery-MSI.Models.csproj.AssemblyReference.cache
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\Brewery-MSI.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\Brewery-MSI.Models.AssemblyInfoInputs.cache
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\Brewery-MSI.Models.AssemblyInfo.cs
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\Brewery-MSI.Models.csproj.CoreCompileInputs.cache
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\Brewery-MSI.Models.dll
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\refint\Brewery-MSI.Models.dll
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\Brewery-MSI.Models.pdb
+C:\Users\15412\Documents\CS234N\Brewery-MSI\Brewery-MSI.Models\obj\Debug\net6.0\ref\Brewery-MSI.Models.dll
