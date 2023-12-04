@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 // Add MySQL support
 builder.Services.AddDbContext<BitsContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-    new MySqlServerVersion(new Version(8, 1, 0)))); // Make sure the version matches your MySQL version
+    new MySqlServerVersion(new Version(8, 1, 0))));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddSwaggerGen(c =>
