@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "mhKhmOMmes/QYqMZy16Nq5AlQ7+bm8O6XUvbgVFplVA=",
+  "Source": "Brewery-MSI.API",
+  "BasePath": "_content/Brewery-MSI.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\15412\\Documents\\CS234N\\Brewery-MSI\\Brewery-MSI\\Brewery-MSI.csproj",
+      "Version": 2,
+      "Source": "Brewery-MSI",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
