@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-image: url('hopsnbarley300.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #003300; /* Very dark green */
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; 
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+
+.logo {
+    width: 100px; 
+    height: auto;
+}
+
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+h1 {
+    flex-grow: 1; /* Allows the title to take the available space */
+    text-align: center;
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adding shadow to the text */
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #333;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+#supplier-list {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.supplier {
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+
+.button, .add-button {
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.button {
+    background-color: #4caf59; /* Fallback for browsers that do not support gradients */
+    background-image: linear-gradient(to right, #4caf59, #67c77f);
+    color: white;
+}
+
+.button:hover {
+    background-image: linear-gradient(to right, #367c39, #4caf59);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.add-button {
+    background-color: #d32f2f; /* Fallback for browsers that do not support gradients */
+    background-image: linear-gradient(to right, #d32f2f, #e57373);
+    color: white;
+}
+
+.add-button:hover {
+    background-image: linear-gradient(to right, #b71c1c, #d32f2f);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+  #notification-area {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative; 
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.modal, .popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content, .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .hamburger {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 30px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    header {
+        text-align: center;
+        padding: 10px;
+        justify-content: space-around;
+    }
+
+    .logo {
+        width: 50px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .logo, .hamburger {
+        flex-grow: 0; 
+    }
+
+    header h1 {
+        margin-top: 0;
+        font-size: smaller;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        display: block;
+        color: black;
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: smaller;
+    }
+
+
+}

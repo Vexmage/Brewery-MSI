@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Brewery Inventory Management</title>
+</head>
+<body>
+    <header>
+        <img src="brewerytoken.png" alt="Logo" class="logo"> 
+        <h1>Brewery Inventory Management</h1>
+        <div class="hamburger" onclick="toggleMenu()">  ☰  </div>
+    </header>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Suppliers</a></li>
+            <li><a href="#">Brew Recipes</a></li>
+            <li><a href="#">Reports</a></li>
+        </ul>
+    </nav>
+    <section id="supplier-list">
+        <h2>Supplier List</h2>
+        <div class="supplier">
+            <span>Supplier 1</span>
+            <button class="button" onclick="openViewModal()">View</button>
+            <button class="button" onclick="openModal()">Edit</button>
+            <button class="button" onclick="openPopup()">Order</button>
+        </div>
+        <div class="supplier">
+            <span>Supplier 2</span>
+            <button class="button" onclick="openViewModal()">View</button>
+            <button class="button" onclick="openModal()">Edit</button>
+            <button class="button" onclick="openPopup()">Order</button>
+        </div>
+        <button class="add-button" onclick="openModal()">[+] Add New Supplier</button>
+    </section>
+
+        <!-- Moved Notification Area -->
+    <section id="notification-area">
+        <h2>Notification Area:</h2>
+        <ul>
+            <li>Supplier 3 has updated their catalog.</li>
+            <li>Order #1023 has been delivered.</li>
+        </ul>
+    </section>
+
+<!-- Add/Edit Supplier Modal -->
+<div id="supplierModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Add/Edit Supplier</h2>
+        <!-- Form for supplier details -->
+        <form id="supplierForm">
+            <label for="supplierName">Supplier Name:</label>
+            <input type="text" id="supplierName" name="supplierName"><br><br>
+
+            <label for="contactPerson">Contact Person:</label>
+            <input type="text" id="contactPerson" name="contactPerson"><br><br>
+
+            <label for="contactEmail">Contact Email:</label>
+            <input type="email" id="contactEmail" name="contactEmail"><br><br>
+
+            <label for="contactPhone">Contact Phone:</label>
+            <input type="tel" id="contactPhone" name="contactPhone"><br><br>
+
+            <label for="physicalAddress">Physical Address:</label>
+            <textarea id="physicalAddress" name="physicalAddress"></textarea><br><br>
+
+            <label for="productCatalog">Product Catalog:</label>
+
+            <select id="productCatalog" name="productCatalog" multiple>
+         
+            </select><br><br>
+
+            <label for="orderMethod">Preferred Order Method:</label>
+            <select id="orderMethod" name="orderMethod">
+                <option value="phone">Phone Call</option>
+                <option value="online">Online</option>
+            </select><br><br>
+
+            <label for="additionalNotes">Additional Notes:</label>
+            <textarea id="additionalNotes" name="additionalNotes"></textarea><br><br>
+
+            <input type="submit" value="Save Supplier">
+        </form>
+    </div>
+</div>
+
+
+<!-- View Supplier Modal -->
+<div id="viewSupplierModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeViewModal()">&times;</span>
+        <h2>View Supplier</h2>
+        <!-- Display supplier details here -->
+        <div id="supplierDetails">
+            <p><strong>Supplier Name:</strong> Acme Brewing Supplies</p>
+            <p><strong>Contact Person:</strong> John Candy</p>
+            <p><strong>Contact Email:</strong> johndoe@acmebrewing.com</p>
+            <p><strong>Contact Phone:</strong> +1234567890</p>
+            <p><strong>Physical Address:</strong> 123 Brew Street, Beer City, ON M4B 1B3</p>
+            <p><strong>Product Catalog:</strong> Hops, Barley, Yeast, Bottles</p>
+            <p><strong>Preferred Order Method:</strong> Online</p>
+            <p><strong>Additional Notes:</strong> Offers organic ingredients. Discount on bulk orders.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Order Popup -->
+<div id="orderPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Order Ingredients</h2>
+        <!-- Form for order details -->
+        <div id="recipeList">
+            <h3>Order from Acme Brewing Supplies</h3>
+            <form id="orderForm">
+                <div class="order-item">
+                    <label for="hops">Hops (kg):</label>
+                    <input type="number" id="hops" name="hops" min="0"><br><br>
+                </div>
+                <div class="order-item">
+                    <label for="barley">Barley (kg):</label>
+                    <input type="number" id="barley" name="barley" min="0"><br><br>
+                </div>
+                <div class="order-item">
+                    <label for="yeast">Yeast (packets):</label>
+                    <input type="number" id="yeast" name="yeast" min="0"><br><br>
+                </div>
+                <div class="order-item">
+                    <label for="bottles">Bottles (units):</label>
+                    <input type="number" id="bottles" name="bottles" min="0"><br><br>
+                </div>
+                <div class="order-summary">
+                    <p><strong>Estimated Delivery Date:</strong> <input type="date" id="deliveryDate"></p>
+                    <p><strong>Total Cost Estimate:</strong> <span id="costEstimate">$0.00</span></p>
+                </div>
+                <input type="submit" value="Place Order">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer>
+        <p>&copy; 2023 Brewery Inventory Management. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:info@breweryinventory.com">info@breweryinventory.com</a>.</p>
+        <p>Follow us on <a href="#">Social Media</a></p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </footer>
+    
+</body>
+<script>
+    function toggleMenu() {
+        var navbar = document.getElementById("navbar");
+        if (navbar.style.display === "block") {
+            navbar.style.display = "none";
+        } else {
+            navbar.style.display = "block";
+        }
+    }
+
+    function openModal() {
+            document.getElementById("supplierModal").style.display = "block";
+        }
+
+    function closeModal() {
+            document.getElementById("supplierModal").style.display = "none";
+    }
+
+    function openPopup() {
+            document.getElementById("orderPopup").style.display = "block";
+    }
+
+    function closePopup() {
+            document.getElementById("orderPopup").style.display = "none";
+    }
+
+    function openViewModal() {
+        document.getElementById("viewSupplierModal").style.display = "block";
+    }
+
+    function closeViewModal() {
+        document.getElementById("viewSupplierModal").style.display = "none";
+    }
+    
+</script>
+</html>

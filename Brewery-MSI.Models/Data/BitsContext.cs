@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Brewery_MSI.Models; // Ensure this matches the actual namespace where BitsContext and Supplier are located
+using Brewery_MSI.Models;
 using System.Linq;
 using Brewery_MSI.Models.Models;
 
@@ -13,14 +13,20 @@ namespace Brewery_MSI.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            // Configure the primary key for Supplier
+            // Configure the primary key for Supplier to match the database column name
             modelBuilder.Entity<Supplier>()
+                .ToTable("supplier")
                 .HasKey(s => s.SupplierId);
+            modelBuilder.Entity<Supplier>()
+                .Property(s => s.SupplierId)
+                .HasColumnName("supplier_id");
 
             // Configure the composite key for SupplierAddress
             modelBuilder.Entity<SupplierAddress>()
                 .HasKey(sa => new { sa.SupplierId, sa.AddressId });
+            modelBuilder.Entity<SupplierAddress>()
+                .Property(sa => sa.SupplierId)
+                .HasColumnName("supplier_id");
 
             // Define the relationship between Supplier and SupplierAddress
             modelBuilder.Entity<SupplierAddress>()
@@ -28,11 +34,12 @@ namespace Brewery_MSI.Models
                 .WithMany(s => s.SupplierAddresses)
                 .HasForeignKey(sa => sa.SupplierId);
 
-            // Define the relationship between Address and SupplierAddress
+            // Assuming Address has a primary key named AddressId
             modelBuilder.Entity<SupplierAddress>()
                 .HasOne(sa => sa.Address)
                 .WithMany() // If Address has a collection of SupplierAddresses, add it here
                 .HasForeignKey(sa => sa.AddressId);
+
             modelBuilder.Entity<Ingredient>().HasKey(i => i.IngredientId);
             modelBuilder.Entity<Adjunct>().HasKey(a => new { a.IngredientId, a.AdjunctTypeId });
             modelBuilder.Entity<BatchContainer>().HasKey(bc => new { bc.BatchId, bc.BrewContainerId });
@@ -64,7 +71,6 @@ namespace Brewery_MSI.Models
                 .HasKey(m => m.MashId);
 
             // Assuming MashStep has a MashId foreign key and its own primary key, configure it accordingly
-            // If MashStep has a different structure, please provide its details for accurate configuration
             modelBuilder.Entity<MashStep>()
                 .HasKey(ms => ms.MashStepId); // Replace MashStepId with the actual primary key of MashStep
 
