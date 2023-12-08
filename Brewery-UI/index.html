@@ -5,6 +5,14 @@
     <title>Brewery Inventory Management</title>
 </head>
 <body>
+    <!-- 
+    Overview of Modals:
+    Modals in this UI are used for displaying information, editing, and ordering without leaving the current page. 
+They are initially hidden and are made visible through JavaScript functions triggered by button clicks. 
+Each modal has a 'display: none' style that is switched to 'display: block' when the respective open function is called. 
+They are structured as <div> elements with a 'modal' class and contain a 'modal-content' class for the inner content. 
+The close function reverts the display style to 'none', effectively hiding the modal again.
+    -->
     <header>
         <img src="brewerytoken.png" alt="Logo" class="logo"> 
         <h1>Brewery Inventory Management</h1>
@@ -154,6 +162,16 @@
     
 </body>
 <script>
+    /* 
+    JavaScript Modal Functionality:
+    This script controls the display of modals and popups. Each modal is initially hidden (display: none in CSS). 
+    - 'openModal', 'openViewModal', and 'openPopup' functions set the display to 'block', making the modal visible.
+    - 'closeModal', 'closeViewModal', and 'closePopup' functions set the display back to 'none', hiding the modal.
+    - These functions are triggered by onclick events on buttons within the HTML.
+    - The 'toggleMenu' function is for the responsive navbar in mobile view, toggling its visibility.
+    */
+
+    // Toggles the navigation menu in mobile view
     function toggleMenu() {
         var navbar = document.getElementById("navbar");
         if (navbar.style.display === "block") {
